@@ -1,7 +1,7 @@
 import { Customer, CreateCustomerDto, UpdateCustomerDto } from '@/types/customer';
 
 // 백엔드 NestJS API 서버 URL
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://useless-elnora-webcorgi-31ba9f1c.koyeb.app';
 
 class ApiError extends Error {
   constructor(public status: number, message: string) {
