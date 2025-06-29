@@ -14,6 +14,8 @@ NestJS 백엔드와 통신하는 Next.js + Tailwind CSS 프론트엔드입니다
 
 **이 저장소는 위 아키텍처에서 "Next.js 프론트엔드" 부분을 담당합니다.**
 
+- https://customer-frontend-one.vercel.app/
+
 ## 🚀 Vercel 배포 가이드
 
 ### 1. 환경변수 설정
