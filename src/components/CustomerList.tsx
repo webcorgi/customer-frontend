@@ -190,7 +190,7 @@ export default function CustomerList({ refreshTrigger, onEditCustomer }: Custome
             
             <div className="p-6">
               <p className="text-gray-700 mb-2">
-                <strong>"{deleteModal.customer?.name}"</strong> 고객을 정말로 삭제하시겠습니까?
+                <strong>&ldquo;{deleteModal.customer?.name}&rdquo;</strong> 고객을 정말로 삭제하시겠습니까?
               </p>
               <p className="text-red-600 font-semibold text-sm">
                 이 작업은 되돌릴 수 없습니다.

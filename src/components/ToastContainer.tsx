@@ -26,6 +26,7 @@ export default function ToastContainer() {
 
   // 전역적으로 사용할 수 있도록 window 객체에 추가
   if (typeof window !== 'undefined') {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).showToast = showToast;
   }
 
@@ -50,22 +51,26 @@ export default function ToastContainer() {
 // 전역 토스트 헬퍼 함수들
 export const toast = {
   success: (title: string, message?: string) => {
-    if (typeof window !== 'undefined' && (window as any).showToast) {
+    if (typeof window !== 'undefined' && (window as Window & { showToast?: (toast: Omit<ToastData, 'id'>) => void }).showToast) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).showToast({ type: 'success', title, message });
     }
   },
   error: (title: string, message?: string) => {
-    if (typeof window !== 'undefined' && (window as any).showToast) {
+    if (typeof window !== 'undefined' && (window as Window & { showToast?: (toast: Omit<ToastData, 'id'>) => void }).showToast) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).showToast({ type: 'error', title, message });
     }
   },
   warning: (title: string, message?: string) => {
-    if (typeof window !== 'undefined' && (window as any).showToast) {
+    if (typeof window !== 'undefined' && (window as Window & { showToast?: (toast: Omit<ToastData, 'id'>) => void }).showToast) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).showToast({ type: 'warning', title, message });
     }
   },
   info: (title: string, message?: string) => {
-    if (typeof window !== 'undefined' && (window as any).showToast) {
+    if (typeof window !== 'undefined' && (window as Window & { showToast?: (toast: Omit<ToastData, 'id'>) => void }).showToast) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).showToast({ type: 'info', title, message });
     }
   },

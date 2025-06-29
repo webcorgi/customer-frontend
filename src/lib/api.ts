@@ -1,7 +1,7 @@
 import { Customer, CreateCustomerDto, UpdateCustomerDto } from '@/types/customer';
 
-// Next.js API Routes 사용 (같은 도메인)
-const API_BASE_URL = '';
+// 백엔드 NestJS API 서버 URL
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
 class ApiError extends Error {
   constructor(public status: number, message: string) {
@@ -14,7 +14,7 @@ async function apiRequest<T>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
-  const url = `${API_BASE_URL}/api${endpoint}`;
+  const url = `${API_BASE_URL}${endpoint}`;
   
   const config: RequestInit = {
     headers: {
